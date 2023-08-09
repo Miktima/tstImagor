@@ -1,0 +1,8 @@
+{
+    "urlImagor": "http://rhel7-devel3.rian.off:7899/",
+    "image": "DSC_0825.jpg",
+    "startHeight": 80,
+    "startWidth": 100,
+    "step": 10,
+    "qPoint": 200
+}
