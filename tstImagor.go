@@ -59,8 +59,13 @@ func main() {
 	for i := 0; i < par.QPoint; i++ {
 		w := strconv.Itoa(i*par.Step + par.StartWidth)
 		h := strconv.Itoa(i*par.Step + par.StartHeight)
-		link = par.URLImagor + "unsafe/fit-in/" + w + "x" + h + "/" + par.Image
+		// link = par.URLImagor + "unsafe/fit-in/" + w + "x" + h + "/" + par.Image
 		// link = par.URLImagor + "unsafe/" + strconv.Itoa(i*par.Step) + "x" + strconv.Itoa(i*par.Step) + ":" + w + "x" + h + "/" + par.Image
+		link = par.URLImagor + "unsafe/" + strconv.Itoa(i*par.Step) + "x" + strconv.Itoa(i*par.Step) + ":" + "5500x3700/stretch/" +
+			w + "x" + h + "/" + par.Image
+		if i == 0 {
+			fmt.Println(link)
+		}
 		go checkStatus(link)
 	}
 	var input string
