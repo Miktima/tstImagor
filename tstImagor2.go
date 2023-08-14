@@ -30,7 +30,7 @@ func checkStatus(url string) {
 
 func main() {
 	// Open our txt file with links
-	readFile, err := os.Open("br_links56.txt")
+	readFile, err := os.Open("lat_links56.txt")
 	// if we os.ReadFile returns an error then handle it
 	if err != nil {
 		fmt.Println(err)
@@ -39,7 +39,10 @@ func main() {
 	fileScanner := bufio.NewScanner(readFile)
 	fileScanner.Split(bufio.ScanLines)
 	// link_prefix := "https://cdnpl1.img.sputniknews.com"
-	link_prefix := "https://cdn1.sputniknewsbr.com.br"
+	// link_prefix := "https://cdn1.sputniknewsbr.com.br"
+	// link_prefix := "https://img.pl.sputniknews.com"
+	// link_prefix := "https://img.sputniknewsbr.com.br"
+	link_prefix := "https://img.sputniknews.lat"
 
 	i := 0
 	var link string
@@ -50,9 +53,9 @@ func main() {
 		}
 		go checkStatus(link)
 		i += 1
-		if i == 8000 {
-			break
-		}
+		// if i == 8000 {
+		// 	break
+		// }
 	}
 	var input string
 	fmt.Scanln(&input)
